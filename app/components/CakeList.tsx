@@ -6,6 +6,7 @@ type Cake = {
   name: string;
   price: number;
   image: string;
+  weight: string;
 };
 
 type CakeListProps = {
@@ -20,7 +21,7 @@ export default function CakeList({ cakes, onSelectCake }: CakeListProps) {
         <div key={cake.id} className={styles.cakeItem}>
           <img src={cake.image} alt={cake.name} />
           <h2>{cake.name}</h2>
-          <p>Price: ₹{cake.price}</p>
+          <p>Price: ₹{cake.price}, Weight: {cake.weight}Kg</p>
           <button onClick={() => onSelectCake(cake)}>Select</button>
         </div>
       ))}

@@ -5,30 +5,35 @@ export const cakes = [
       name: "Chocolate Cake",
       price: 400,
       image: "/images/black-forest-cake.png",
+      weight: "1",
     },
     {
       id: 2,
-      name: "Vanilla Cake",
-      price: 400,
-      image: "/images/black-forest-cake.png",
+      name: "Fondant chocolate Cake",
+      price: 2000,
+      image: "/images/foundent_chocolate_cake.jpg",
+      weight: "2",
     },
     {
       id: 3,
-      name: "Strawberry Cake",
-      price: 450,
-      image: "/images/black-forest-cake.png",
+      name: "Pineapple Cake",
+      price: 550,
+      image: "/images/Pineapple_cake_1.jpg",
+      weight: "1"
     },
     {
       id: 4,
-      name: "Strawberry Cake",
-      price: 450,
-      image: "/images/black-forest-cake.png",
+      name: "Chocolate Cake",
+      price: 550,
+      image: "/images/chocolate_cake_1.jpg",
+      weight: "1"
     },
     {
       id: 5,
-      name: "Strawberry Cake",
-      price: 450,
-      image: "/images/black-forest-cake.png",
+      name: "Chocolate glass cake",
+      price: 40,
+      image: "/images/glass_cake.jpg",
+      weight: ""
     }
   ];
   

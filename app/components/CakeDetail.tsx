@@ -6,6 +6,7 @@ type Cake = {
   name: string;
   price: number;
   image: string;
+  weight: string;
 };
 
 type CakeDetailProps = {
@@ -19,7 +20,7 @@ export default function CakeDetail({ cake, onPayment, onCancel }: CakeDetailProp
     <div className={styles.cakeDetail}>
     <div className={styles.left}>
       <h2>You selected: {cake.name}</h2>
-      <p>Price: ₹{cake.price}</p>
+      <p>Price: ₹{cake.price}, Weight: {cake.weight}Kg</p>
       <img src={cake.image} alt={cake.name} />
       <p>To pay, scan the QR code below:</p>
       <button onClick={onPayment}>I Paid</button>

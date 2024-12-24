@@ -10,6 +10,7 @@ type Cake = {
   name: string;
   price: number;
   image: string;
+  weight: string;
 };
 
 export default function Home() {
