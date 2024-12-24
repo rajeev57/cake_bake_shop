@@ -1,0 +1,120 @@
+/* CakeDetail.module.css */
+
+/* Main container for the cake details */
+.cakeDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.cakeDetail .left {
+  flex: 1;
+  padding-right: 20px; /* Space between left content and QR code */
+  max-width: 50%; /* Restrict width on desktop */
+}
+
+.cakeDetail .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cakeDetail h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.cakeDetail p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.cakeDetail img {
+  width: 100%;
+  max-width: 300px; /* Limit the size of the image */
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.qrCode {
+  width: 150px;
+  height: 150px;
+  margin: 20px 0;
+}
+
+.cakeDetail button + button {
+  margin-left: 10px; /* Horizontal space between buttons */
+}
+
+.cakeDetail button {
+  background-color: #ff8c00;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 10px 0;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cakeDetail button:hover {
+  background-color: #e07b00;
+  transform: scale(1.05);
+}
+
+.cakeDetail button:focus {
+  outline: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .cakeDetail {
+    flex-direction: column; /* Stack the content on tablets */
+    text-align: center; /* Center-align text */
+  }
+
+  .cakeDetail .left {
+    max-width: 100%; /* Take full width on mobile */
+    padding-right: 0;
+  }
+
+  .cakeDetail .right {
+    max-width: 100%; /* Take full width on mobile */
+    margin-top: 20px; /* Space above QR code */
+    align-items: center;
+  }
+
+  .cakeDetail img {
+    max-width: 80%; /* Smaller image size for tablets */
+  }
+
+  .qrCode {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cakeDetail img {
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .qrCode {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cakeDetail h2 {
+    font-size: 1.2rem; /* Smaller font size on mobile */
+  }
+
+  .cakeDetail p {
+    font-size: 1rem; /* Adjust paragraph font size */
+  }
+}

@@ -1,0 +1,83 @@
+/* payment.module.css */
+
+/* Main container for payment success message */
+.paymentSuccess {
+    text-align: center;
+    padding: 20px;
+    background-color: #e9f7ef;
+    border: 1px solid #28a745;
+    border-radius: 8px;
+    width: 300px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px; /* Space at the bottom to ensure no overlap with footer */
+  }
+  
+  .paymentSuccess h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .paymentSuccess p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .paymentSuccess button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Ensure there’s space above the button */
+  }
+  
+  .paymentSuccess button:hover {
+    background-color: #218838;
+  }
+  
+  /* Mobile-first responsive styling */
+  @media (max-width: 768px) {
+    .paymentSuccess {
+      width: 90%; /* Make the container take up more width on tablets */
+      padding: 15px;
+    }
+  
+    .paymentSuccess h2 {
+      font-size: 20px; /* Adjust font size for mobile screens */
+    }
+  
+    .paymentSuccess p {
+      font-size: 14px; /* Adjust font size for mobile screens */
+    }
+  
+    .paymentSuccess button {
+      width: 100%; /* Make the button full width on smaller screens */
+      padding: 12px 20px;
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .paymentSuccess {
+      width: 100%; /* Ensure container takes full width on very small screens */
+      padding: 10px;
+    }
+  
+    .paymentSuccess h2 {
+      font-size: 18px;
+    }
+  
+    .paymentSuccess p {
+      font-size: 12px;
+    }
+  
+    .paymentSuccess button {
+      font-size: 16px; /* Adjust button font size for small screens */
+      padding: 12px;
+    }
+  }
+  

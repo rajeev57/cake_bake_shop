@@ -2,20 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+
+.payment-success {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Mobile-first responsive styling using media queries */
+
+@media (max-width: 480px) {
+  /* Add margin-bottom to main content to prevent overlap with footer */
+  main {
+    padding-bottom: 0; /* Adjust bottom padding to avoid footer overlap */
+  }
+  
+  /* Add extra space to ensure button is not covered */
+  .payment-success {
+    margin-bottom: 60px; /* Add margin below payment section */
+  }
 }
