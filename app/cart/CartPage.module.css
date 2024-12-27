@@ -1,0 +1,38 @@
+/* For the Back to Shop Button */
+.backToShopButton {
+    background-color: #007bff;  /* Bright blue background */
+    color: white;               /* White text color */
+    font-size: 16px;            /* Font size */
+    padding: 12px 24px;         /* Padding for better spacing */
+    border: none;               /* Remove default border */
+    border-radius: 5px;         /* Rounded corners */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: all 0.3s ease;  /* Smooth transition for hover effect */
+    text-align: center;         /* Center the text */
+    text-decoration: none;      /* Remove underline if it's a link */
+    margin: 5px 5px; 
+  }
+  
+  .backToShopButton:hover {
+    background-color: #0056b3;  /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+  }
+  
+  .backToShopButton:active {
+    background-color: #004085;  /* Even darker blue when clicked */
+    transform: translateY(0);   /* Reset lift effect when clicked */
+  }
+  
+  .backToShopButton:focus {
+    outline: none;              /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);  /* Add a soft blue outline on focus */
+  }
+  
+  @media (max-width: 768px) {
+    .backToShopButton {
+      font-size: 14px; /* Smaller font on mobile */
+      padding: 10px 20px;  /* Adjust padding for smaller screens */
+      margin: 5px 5px;       /* Add margin for better spacing */
+    }
+  }
+  

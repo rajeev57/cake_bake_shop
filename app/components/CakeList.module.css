@@ -6,6 +6,7 @@
   }
   
   .cakeItem {
+    position: relative;
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px;
@@ -57,6 +58,53 @@
   .cakeItem button:focus {
     outline: none;
   }
+
+
+/* Info Icon positioned at top-right of the cake card */
+.infoIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem; /* Increase icon size */
+  cursor: pointer;
+  color: #ffffff; /* White color for contrast */
+  background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue background */
+  border-radius: 50%; /* Circular background */
+  padding: 12px; /* Larger padding for better clickability */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  z-index: 10; /* Ensure it appears above the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+/* Hover effects */
+.infoIcon:hover {
+  color: #fff; /* Keep text white */
+  background-color: #007bff; /* Change background color on hover */
+  transform: scale(1.1); /* Slightly scale up the icon for emphasis */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add stronger shadow on hover */
+}
+
+/* Pulsing effect on the info icon */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+  }
+}
+
+/* Apply pulse animation */
+.infoIcon {
+  animation: pulse 2s infinite;
+}
+
   
   @media (max-width: 768px) {
     .cakeItem {
