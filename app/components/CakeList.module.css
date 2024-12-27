@@ -63,14 +63,13 @@
 /* Info Icon positioned at top-right of the cake card */
 .infoIcon {
   position: absolute;
-  top: 10px;
+  top: 0px;
   right: 10px;
   font-size: 2rem; /* Increase icon size */
   cursor: pointer;
   color: #ffffff; /* White color for contrast */
   background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue background */
-  border-radius: 50%; /* Circular background */
-  padding: 12px; /* Larger padding for better clickability */
+  border-radius: 20px 0px; /* Circular background */ /* Larger padding for better clickability */
   transition: all 0.3s ease; /* Smooth transition for hover effects */
   z-index: 10; /* Ensure it appears above the image */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
