@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from './components/Footer';
 import Header from "./components/Header";
 import { CartProvider } from "./context/CartContext";
+import FloatingCallButton from "./components/FloatingCallButton";
 
 export const metadata: Metadata = {
   title: "Cake'N'Bake Shop",
@@ -27,6 +28,7 @@ export default function RootLayout({
           <main style={{ paddingTop: '15%', }}>{children}</main>
           <Footer />
         </CartProvider>
+        <FloatingCallButton />
       </body>
     </html>
   );
