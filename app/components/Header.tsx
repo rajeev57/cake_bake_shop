@@ -12,7 +12,7 @@ export default function Header() {
     <header className={styles.header}>
       <Link href="/" className={styles.homeLink}>
         {iconError ? (
-          'Home'
+          "Home"
         ) : (
           <img
             src="/home-icon.svg" // Replace with the path to your icon
@@ -22,17 +22,7 @@ export default function Header() {
           />
         )}
       </Link>
-      <h1>Welcome to the Cake'N'Bake Shop</h1>
-      {/* <div
-        className={`${styles.cartIcon} ${cartQuantity > 0 ? styles.hasItems : ""}`}
-        onClick={handleCartClick}
-        aria-label={`Go to cart, ${cartQuantity > 0 ? `${cartQuantity} item(s)` : 'empty'}`}
-      >
-        🛒
-        {cartQuantity > 0 && (
-          <span className={styles.cartQuantity}>{cartQuantity}</span>
-        )}
-      </div> */}
+      <h1>Welcome to the Cake&apos;N&apos;Bake Shop</h1>
       <Link href="/cart">
           <div className={`${styles.cartIcon} ${cartQuantity > 0 ? styles.hasItems : ""}`} aria-label={`Go to cart, ${cartQuantity > 0 ? `${cartQuantity} item(s)` : "empty"}`}>
             🛒

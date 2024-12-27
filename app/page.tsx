@@ -1,11 +1,10 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CakeList from "./components/CakeList";
 import CakeDetail from "./components/CakeDetail";
 import PaymentSuccess from "./components/PaymentSuccess";
 import Header from "./components/Header";
 import { cakes } from "../public/data/cakes";
-import Cart from "./components/Cart";
 import { useCart } from "./context/CartContext";
 
 type Cake = {
@@ -23,8 +22,6 @@ export type CartItem = Cake & {
 export default function Home() {
   const [selectedCake, setSelectedCake] = useState<Cake | null>(null);
   const [paymentComplete, setPaymentComplete] = useState(false);
-  const [cart, setCart] = useState<CartItem[]>([]);
-  const [cartQuantity, setCartQuantity] = useState(0);
   const { addToCart } = useCart();
 
   // useEffect(() => {
