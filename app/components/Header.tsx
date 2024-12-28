@@ -22,7 +22,7 @@ export default function Header() {
           />
         )}
       </Link>
-      <h1>Welcome to the Cake&apos;N&apos;Bake Shop</h1>
+      <h1>Cake&apos;N&apos;Bake Shop</h1>
       <Link href="/cart">
           <div className={`${styles.cartIcon} ${cartQuantity > 0 ? styles.hasItems : ""}`} aria-label={`Go to cart, ${cartQuantity > 0 ? `${cartQuantity} item(s)` : "empty"}`}>
             🛒

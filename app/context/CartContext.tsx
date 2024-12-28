@@ -42,20 +42,30 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   }, [cart]);
 
-  const addToCart = (item: CartItem) => {
+  const addToCart = (item: CartItem) => {  
+    // Ensure images is an array, even if it’s passed as a string
+    const normalizedItem: CartItem = {
+      ...item,
+      images: Array.isArray(item.images) ? item.images : [item.images],
+    };
+  
     setCart((prevCart) => {
-      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
+      const existingItem = prevCart.find((cartItem) => cartItem.id === normalizedItem.id);
+  
       if (existingItem) {
+        // If the item already exists, update its quantity but preserve the images as an array
         return prevCart.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          cartItem.id === normalizedItem.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1, images: cartItem.images }
             : cartItem
         );
       } else {
-        return [...prevCart, { ...item, quantity: 1 }];
+        // If the item doesn't exist, add it to the cart
+        return [...prevCart, { ...normalizedItem, quantity: 1 }];
       }
     });
   };
+  
 
   const removeFromCart = (id: number) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));

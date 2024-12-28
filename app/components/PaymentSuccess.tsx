@@ -5,7 +5,8 @@ type Cake = {
   id: number;
   name: string;
   price: number;
-  image: string;
+  images: string[];
+  weight: string;
 };
 
 type PaymentSuccessProps = {

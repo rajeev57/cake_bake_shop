@@ -7,20 +7,15 @@ import styles from "./CartPage.module.css";
 
 
 export default function Home() {
-    // const [cart, setCart] = useState<CartItem[]>([]);
-    const router = useRouter();
-
-    const { cart, removeFromCart, updateQuantity } = useCart();
-
-  // Handle quantity change (e.g., from input field)
+  const router = useRouter();
+  const { cart, removeFromCart, updateQuantity } = useCart();
   const handleQuantityChange = (id: number, quantity: number) => {
-    updateQuantity(id, quantity); // Update the quantity in context
+    updateQuantity(id, quantity);
   };
 
-  // Handle checkout (optional, depending on your logic)
   const handleCheckout = () => {
     alert("Proceeding to checkout...");
-    removeFromCart(0); // Optionally clear the cart here if needed
+    removeFromCart(0);
   };
 
   return (

@@ -11,7 +11,6 @@ interface CartProps {
 
 const Cart: React.FC<CartProps> = ({ cart, onRemove, onUpdateQuantity, onCheckout }) => {
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
   return (
     <div className={styles.cartContainer}>
       <h2>Your Cart</h2>
@@ -23,7 +22,12 @@ const Cart: React.FC<CartProps> = ({ cart, onRemove, onUpdateQuantity, onCheckou
             {cart.map((item) => (
               <li key={item.id} className={styles.cartItem}>
                 <div className={styles.itemDetails}>
-                  <img src={item.image} alt={item.name} />
+                  {/* Defensive check for images array */}
+                  {item.images && item.images.length > 0 ? (
+                    <img src={item.images[0]} alt={item.name} />
+                  ) : (
+                    <div className={styles.imagePlaceholder}>No Image</div>
+                  )}
                   <div>
                     <h3>{item.name}</h3>
                     <p>Price: ₹{item.price}</p>

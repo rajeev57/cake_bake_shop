@@ -11,7 +11,7 @@ type Cake = {
   id: number;
   name: string;
   price: number;
-  image: string;
+  images: string[];
   weight: string;
 };
 
@@ -24,53 +24,6 @@ export default function Home() {
   const [paymentComplete, setPaymentComplete] = useState(false);
   const { addToCart } = useCart();
 
-  // useEffect(() => {
-  //   const storedCart = localStorage.getItem("cart");
-  //   if (storedCart) {
-  //     setCart(JSON.parse(storedCart));
-  //   }
-  // }, []);
-
-  // // Effect to update cart quantity and sync with localStorage
-  // useEffect(() => {
-  //   setCartQuantity(cart.reduce((total, item) => total + item.quantity, 0));
-
-  //   // Sync cart with localStorage whenever cart changes
-  //   if (cart.length > 0) {
-  //     localStorage.setItem("cart", JSON.stringify(cart));
-  //   }
-  // }, [cart]);
-
-  // const handleAddToCart = (cake: Cake) => {
-  //   setCart((prevCart) => {
-  //     const existingItem = prevCart.find((item) => item.id === cake.id);
-  //     if (existingItem) {
-  //       return prevCart.map((item) =>
-  //         item.id === cake.id
-  //           ? { ...item, quantity: item.quantity + 1 }
-  //           : item
-  //       );
-  //     } else {
-  //       return [...prevCart, { ...cake, quantity: 1 }];
-  //     }
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   if (cart.length > 0) {
-  //     localStorage.setItem("cart", JSON.stringify(cart));
-  //   }
-  // }, [cart]);
-
-  // const handleSelectCake = (cake: Cake) => {
-  //   setSelectedCake(cake);
-  //   setPaymentComplete(false);
-  // };
-
-  // const handlePayment = () => {
-  //   setPaymentComplete(true);
-  //   setCart([]);
-  // };
   const handleAddToCart = (cake: Cake) => {
     addToCart({ ...cake, quantity: 1 });
   };
