@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import Cart from "../components/Cart";
 import { useRouter } from "next/navigation";
 import { useCart } from "../context/CartContext";
@@ -8,14 +8,25 @@ import styles from "./CartPage.module.css";
 
 export default function Home() {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
   const { cart, removeFromCart, updateQuantity } = useCart();
   const handleQuantityChange = (id: number, quantity: number) => {
     updateQuantity(id, quantity);
   };
 
+  const calculateTotal = () => {
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
   const handleCheckout = () => {
-    alert("Proceeding to checkout...");
+    setIsLoading(true); // Set loading state to true
     removeFromCart(0);
+    setTimeout(() => {
+      // Simulate a delay before redirecting to payment page
+      const total = calculateTotal(); // Calculate the total price
+      router.push(`/payment?total=${total}`);
+      setIsLoading(false); // Reset loading state
+    }, 1000);
   };
 
   return (
@@ -27,7 +38,9 @@ export default function Home() {
         onUpdateQuantity={handleQuantityChange}
         onCheckout={handleCheckout}
       />
-      <button className={styles.backToShopButton} onClick={() => router.push("/")}>Back to Shop</button> {/* Go back to Home page */}
+      <button className={styles.backToShopButton} onClick={() => router.push("/")}>Back to Shop</button> 
+      {/* Go back to Home page */}
+      {isLoading && <div className={styles.loader}>Processing...</div>}
     </div>
   );
 }

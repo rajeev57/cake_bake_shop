@@ -55,6 +55,13 @@ export const cakes = [
       price: 20,
       images: ["/images/patties_1.jpg", "/images/patties_2.jpg"],
       weight: ""
+    },
+    {
+      id: 9,
+      name: "Chocolate cake",
+      price: 350,
+      images: ["/images/chocolate_cake_with_choco_chips_border.jpg"],
+      weight: "0.5"
     }
   ];
   

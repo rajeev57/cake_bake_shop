@@ -1,0 +1,47 @@
+.paymentPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .qrContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .qrCode {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .confirmationButtonContainer {
+    margin-top: 20px;
+  }
+  
+  .confirmButton {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .confirmButton:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .successMessage {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+  }
+
+  
