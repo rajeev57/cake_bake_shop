@@ -9,7 +9,7 @@ import styles from "./CartPage.module.css";
 export default function Home() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const { cart, removeFromCart, updateQuantity } = useCart();
+  const { cart, removeFromCart, updateQuantity, setTotalPrice } = useCart();
   const handleQuantityChange = (id: number, quantity: number) => {
     updateQuantity(id, quantity);
   };
@@ -24,7 +24,8 @@ export default function Home() {
     setTimeout(() => {
       // Simulate a delay before redirecting to payment page
       const total = calculateTotal(); // Calculate the total price
-      router.push(`/payment?total=${total}`);
+      setTotalPrice(total); // Set the total price in the context
+      router.push("/payment");
       setIsLoading(false); // Reset loading state
     }, 1000);
   };

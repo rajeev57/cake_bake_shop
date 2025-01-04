@@ -9,6 +9,8 @@ type CartContextType = {
   addToCart: (item: CartItem) => void;
   removeFromCart: (id: number) => void;
   updateQuantity: (id: number, quantity: number) => void;
+  totalPrice: number;
+  setTotalPrice: (total: number) => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -24,6 +26,7 @@ export const useCart = () => {
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [cartQuantity, setCartQuantity] = useState(0);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
 
   // Load cart from localStorage when the app starts
   useEffect(() => {
@@ -69,7 +72,9 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const removeFromCart = (id: number) => {
     // setCart((prevCart) => prevCart.filter((item) => item.id !== id));
-    setCart(id === 0 ? [] : cart.filter((item) => item.id !== id));
+    const updatedCart = id === 0 ? [] : cart.filter((item) => item.id !== id);
+    setCart(updatedCart);  // Update state
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   const updateQuantity = (id: number, quantity: number) => {
@@ -81,7 +86,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   return (
-    <CartContext.Provider value={{ cart, cartQuantity, addToCart, removeFromCart, updateQuantity }}>
+    <CartContext.Provider value={{ cart, cartQuantity, addToCart, removeFromCart, updateQuantity, totalPrice, setTotalPrice }}>
       {children}
     </CartContext.Provider>
   );

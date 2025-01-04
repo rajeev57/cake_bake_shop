@@ -1,22 +1,23 @@
 "use client"
 import { FC, useState, useEffect } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 // import QRCode from "qrcode.react"; // or any other QR code library
 import styles from "./PaymentPage.module.css"; // Optional styling
+import { useCart } from "../context/CartContext";
+import Image from 'next/image';
 
 const PaymentPage: FC = () => {
     const router = useRouter();
-    const searchParams = useSearchParams(); // Get search params
-    const total = searchParams.get('total');
     const qrCodeUrl = "/images/qr_code_golu.jpg"; // Replace with the URL of your QR code image
     const [paymentConfirmed, setPaymentConfirmed] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
+    const { totalPrice } = useCart();
 
     useEffect(() => {
-        if (!total) {
+        if (!totalPrice) {
             router.push("/cart"); // Redirect to cart if no total price is available
         }
-    }, [total]);
+    }, [totalPrice, router]);
 
     const handlePaymentConfirmation = async () => {
         setLoading(true);
@@ -31,14 +32,19 @@ const PaymentPage: FC = () => {
     return (
         <div className={styles.paymentPage}>
             <h2>Complete Your Payment</h2>
-            <p>Total Price: ₹{total}</p>
+            <p>Total Price: ₹{totalPrice}</p>
 
             {/* Display QR Code */}
             <div className={styles.qrContainer}>
-                <img src={qrCodeUrl} alt="Payment QR Code" className={styles.qrCode} />
+                <Image 
+                    src={qrCodeUrl} 
+                    alt="Payment QR Code" 
+                    className={styles.qrCode}
+                    width={200}
+                    height={200} />
             </div>
 
-            <p>Scan the QR code above to make the payment of ₹{total}.</p>
+            <p>Scan the QR code above to make the payment of ₹{totalPrice}.</p>
 
             <div className={styles.confirmationButtonContainer}>
                 <button
