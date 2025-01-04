@@ -31,7 +31,7 @@ const Cart: React.FC<CartProps> = ({ cart, onRemove, onUpdateQuantity, onCheckou
                   <div>
                     <h3>{item.name}</h3>
                     <p>Price: ₹{item.price}</p>
-                    <p>Weight: {item.weight}</p>
+                    {item.weight && item.weight.trim().length > 0 && <p>Weight: {item.weight}</p>}
                   </div>
                 </div>
                 <div className="item-actions">

@@ -40,7 +40,7 @@ export default function CakeCard({ cake, onSelectCake, onAddToCart }: CakeCardPr
       />
       <h2>{cake.name}</h2>
       <p>
-        Price: ₹{cake.price}, Weight: {cake.weight}Kg
+        Price: ₹{cake.price} {cake.weight && cake.weight.trim().length > 0 && `, Weight: ${cake.weight}Kg`}
       </p>
       <button onClick={() => onAddToCart(cake)}>Add to Cart</button>
     </div>

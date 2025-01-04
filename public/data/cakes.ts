@@ -40,14 +40,14 @@ export const cakes = [
       name: "Chocolate cake",
       price: 500,
       images: ["/images/chocolate_cake_2.jpg", "/images/chocolate_cake_3.jpg"],
-      weight: "1kg"
+      weight: "1"
     },
     {
       id: 7,
       name: "Chocolate cake",
       price: 500,
       images: ["/images/chocolate_cake_with_heart_garnishing_red_colour_1.jpg", "/images/chocolate_cake_with_heart_garnishing_red_colour_2.jpg"],
-      weight: "1kg"
+      weight: "1"
     },
     {
       id: 8,

@@ -1,28 +1,47 @@
 .floatingCallButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: #28a745; /* Green color */
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1000; /* Ensures it's on top */
-    transition: transform 0.3s ease, background-color 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #28a745;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  animation: ringBell 1.5s infinite; /* Ringing bell effect */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floatingCallButton:hover {
+  background-color: #218838;
+  transform: scale(1.1); /* Slightly larger on hover */
+  animation: none; /* Stop ringing on hover */
+}
+
+@keyframes ringBell {
+  0% {
+    transform: rotate(0deg); /* Start position */
   }
-  
-  .floatingCallButton:hover {
-    background-color: #218838; /* Darker green */
-    transform: scale(1.1); /* Slight hover effect */
+  25% {
+    transform: rotate(-15deg); /* Tilt left */
   }
-  
-  .callIcon {
-    width: 30px;
-    height: 30px;
-    color: white; /* White icon */
+  50% {
+    transform: rotate(15deg); /* Tilt right */
   }
-  
+  75% {
+    transform: rotate(-10deg); /* Tilt left (smaller) */
+  }
+  100% {
+    transform: rotate(0deg); /* Back to start */
+  }
+}
+
+.callIcon {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
