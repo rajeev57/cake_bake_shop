@@ -62,6 +62,62 @@ export const cakes = [
       price: 350,
       images: ["/images/chocolate_cake_with_choco_chips_border.jpg"],
       weight: "0.5"
+    },
+    {
+      id: 10,
+      name: "Chocolate cake",
+      price: 250,
+      images: ["/images/black_design_strip_cake.jpg"],
+      weight: "0.5"
+    },
+    {
+      id: 11,
+      name: "Chocolate cake",
+      price: 250,
+      images: ["/images/cake_with_gold_and_granicing.jpg"],
+      weight: "0.5"
+    },
+    {
+      id: 12,
+      name: "Chocolate cake",
+      price: 600,
+      images: ["/images/doll_cake_1.jpg", "/images/doll_cake_2.jpg"],
+      weight: "1"
+    },
+    {
+      id: 13,
+      name: "Chocolate cake",
+      price: 300,
+      images: ["/images/chocolate_cake_with_gold_flower.jpg"],
+      weight: "0.5"
+    },
+    {
+      id: 14,
+      name: "Pineapple cake",
+      price: 250,
+      images: ["/images/pineapple_with_white_and_yellow_design.jpg"],
+      weight: "0.5"
+    },
+    {
+      id: 15,
+      name: "Chocolate cake",
+      price: 250,
+      images: ["/images/red_chocolate.jpg"],
+      weight: "0.5"
+    },
+    {
+      id: 16,
+      name: "Chocolate cake",
+      price: 550,
+      images: ["/images/green_color_cake.jpg"],
+      weight: "1"
+    },
+    {
+      id: 17,
+      name: "Chocolate cake",
+      price: 300,
+      images: ["/images/white_with_red_and_rose_with_store_barrey.jpg"],
+      weight: "0.5"
     }
   ];
   

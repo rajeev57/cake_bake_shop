@@ -1,111 +1,121 @@
+/* Main container for the cake item card */
 .cakeItem {
-    position: relative;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: calc(33.33% - 20px);
-    transition: transform 0.3s ease-in-out;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px); /* 3 columns with space between */
+  transition: transform 0.3s ease-in-out;
+}
+
+.cakeItem:hover {
+  transform: translateY(-10px); /* Lift the card on hover */
+}
+
+/* Image inside the cake card */
+.cakeItem img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out; /* For hover effect */
+}
+
+.cakeItem img:hover {
+  transform: scale(1.2); /* Magnify image on hover */
+}
+
+/* Title of the cake */
+.cakeItem h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+/* Price and weight details */
+.cakeItem p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Buttons inside the cake item */
+.cakeItem button {
+  background-color: #ff8c00;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.cakeItem button:hover {
+  background-color: #e07b00;
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.cakeItem button:focus {
+  outline: none; /* Remove focus outline */
+}
+
+/* Info Icon positioned at top-right of the cake card */
+.infoIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem; /* Icon size */
+  cursor: pointer;
+  color: #ffffff; /* White text for contrast */
+  background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue background */
+  border-radius: 50%; /* Circular shape */
+  padding: 5px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  z-index: 10; /* Ensure it appears above other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+/* Hover effects for the info icon */
+.infoIcon:hover {
+  background-color: #007bff; /* Bright blue background on hover */
+  transform: scale(1.1); /* Slightly scale up the icon */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* Pulsing animation for the info icon */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
   }
-  
-  .cakeItem:hover {
-    transform: translateY(-10px);
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.9);
   }
-  
-  .cakeItem img {
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+  }
+}
+
+/* Apply pulse animation to the info icon */
+.infoIcon {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive design: Two columns on smaller screens */
+@media (max-width: 768px) {
+  .cakeItem {
+    width: calc(50% - 20px);
+  }
+}
+
+/* Responsive design: Full width on very small screens */
+@media (max-width: 480px) {
+  .cakeItem {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
   }
-  
-  .cakeItem h2 {
-    font-size: 1.5rem;
-    margin-top: 10px;
-  }
-  
-  .cakeItem p {
-    font-size: 1.1rem;
-    color: #555;
-  }
-  
-  /* Buttons inside the cake item */
-  .cakeItem button {
-    background-color: #ff8c00;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 10px;
-  }
-  
-  .cakeItem button:hover {
-    background-color: #e07b00;
-    transform: scale(1.05);
-  }
-  
-  .cakeItem button:focus {
-    outline: none;
-  }
-  
-  /* Info Icon positioned at top-right of the cake card */
-  .infoIcon {
-    position: absolute;
-    top: 0px;
-    right: 10px;
-    font-size: 2rem; /* Increase icon size */
-    cursor: pointer;
-    color: #ffffff; /* White color for contrast */
-    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue background */
-    border-radius: 20px 0px; /* Circular background */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    z-index: 10; /* Ensure it appears above the image */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
-  }
-  
-  /* Hover effects */
-  .infoIcon:hover {
-    color: #fff; /* Keep text white */
-    background-color: #007bff; /* Change background color on hover */
-    transform: scale(1.1); /* Slightly scale up the icon for emphasis */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add stronger shadow on hover */
-  }
-  
-  /* Pulsing effect on the info icon */
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-      box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
-    }
-    50% {
-      transform: scale(1.2);
-      box-shadow: 0 0 15px rgba(0, 123, 255, 0.9);
-    }
-    100% {
-      transform: scale(1);
-      box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
-    }
-  }
-  
-  /* Apply pulse animation */
-  .infoIcon {
-    animation: pulse 2s infinite;
-  }
-  
-  @media (max-width: 768px) {
-    .cakeItem {
-      width: calc(50% - 20px);
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .cakeItem {
-      width: 100%;
-    }
-  }
-  
+}
